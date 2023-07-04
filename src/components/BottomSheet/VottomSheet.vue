@@ -19,7 +19,8 @@ const handle = ref<HTMLDivElement | null>(null)
 const content = ref<HTMLDivElement | null>(null)
 
 const bottom = ref(0)
-const contentHeight = ref(0)
+const totalContentHeight = ref(0)
+
 const handleHeight = computed(() => {
   if (!handle.value) {
     return 0
@@ -36,7 +37,7 @@ function setBottomIfClosed() {
   if (props.fullScreen) {
     bottom.value = -window.innerHeight
   } else {
-    bottom.value = contentHeight.value
+    bottom.value = totalContentHeight.value
   }
 }
 
@@ -57,7 +58,7 @@ function setHeightBaseOnContent() {
     return
   }
 
-  contentHeight.value = -contentAndHandleHeight.value
+  totalContentHeight.value = -contentAndHandleHeight.value
 
   setBottom(internalModelValue.value)
 }
@@ -71,7 +72,7 @@ watch(windowWidth, setBottomIfClosed)
 const height = computed(() =>
     props.fullScreen
         ? windowWidth.value && -window.innerHeight
-        : contentHeight.value
+        : totalContentHeight.value
 )
 
 // WIDTH
@@ -133,7 +134,7 @@ function registerTouchEvents() {
       return
     }
 
-    if (bottom.value <= contentHeight.value * 0.6) {
+    if (bottom.value <= totalContentHeight.value * 0.6) {
       close()
     } else {
       bottom.value = 0
