@@ -1,52 +1,65 @@
-# vottom-sheet
+# Vottom Sheet
 
-This template should help get you started developing with Vue 3 in Vite.
+Vottom Sheet is a touch-friendly, lightweight and easy-to-use Vue.js component
+that allows you to create smooth bottom sheets or modal dialogs in your web
+application.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- Simple integration: Easily integrate the Vottom Sheet component into your Vue.js project with just a few lines of code.
+- Smooth animations: Enjoy smooth and elegant animations as the bottom sheet slides into view and hides.
+- Flexible: Use Vottom Sheet however you want.
+- More to come...
 
-## Type Support for `.vue` Imports in TS
+## Installation
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+```
+npm:
+npm install vottom-sheet
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+# or yarn:
+yarn add vottom-sheet
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+ # or pnpm:
+pnpm add vottom-sheet
 ```
 
-### Compile and Hot-Reload for Development
+## Usage
 
-```sh
-npm run dev
+```vue
+<script lang="ts" setup>
+import { ref } from 'vue';
+import VottomSheet from 'vottom-sheet';
+
+const model = ref(false);
+</script>
+
+<template>
+  <button type="button" @click="model = true">
+    Open Vottom Sheet
+  </button>
+
+  <VottomSheet v-model="model">
+    <div>
+      Hello from Vottom Sheet
+    </div>
+  </VottomSheet>
+</template>
 ```
 
-### Type-Check, Compile and Minify for Production
+## Props
 
-```sh
-npm run build
-```
+Vottom Sheet supports the following props:
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+- `modelValue` (Boolean, required): Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).
+- `fullScreen` (Boolean, optional, default: false): Make the component full-screen.
+- More props is going to be added...
 
-```sh
-npm run test:unit
-```
+## Events
 
-### Lint with [ESLint](https://eslint.org/)
+- `update:modelValue` (Payload: Boolean): Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`). Can be used to listen on state changes and triggering custom code.
 
-```sh
-npm run lint
-```
+## Slots
+- `default`: Insert the content that is going to be displayed inside bottom sheet.
+- `handle`: Insert custom handle for bottom sheet which is displayed above the `content` slot and can be used to drag the component.
+
