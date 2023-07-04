@@ -192,7 +192,7 @@ watch(() => props.modelValue, toggleDocumentScroll)
   transform: translate(-50%, 0);
 
   &--open {
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
   }
 
   &--bordered {
