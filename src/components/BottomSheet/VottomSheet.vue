@@ -7,7 +7,6 @@ import { MAX_OPACITY } from './VottomSheet.constants'
 import BaseOverlay from '@/components/Overlay/VOverlay.vue'
 
 const props = withDefaults(defineProps<Props>(), {
-  modelValue: false,
   fullScreen: false
 })
 
