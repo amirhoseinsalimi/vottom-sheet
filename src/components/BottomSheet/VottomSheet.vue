@@ -84,7 +84,7 @@ const height = computed(() =>
 );
 
 // WIDTH
-const width = computed(() => (props.fullScreen ? 'lg:w-full' : 'lg:w-8/12'));
+const width = computed(() => (props.fullScreen ? '100vw' : '768px'));
 
 // BORDER RADIUS
 const borderRadius = computed(() => !props.fullScreen && 'bottom-sheet--bordered');
@@ -99,6 +99,7 @@ const openStateClass = computed(() => internalModelValue && 'bottom-sheet--open'
 const openStateStyle = computed(() => ({
   bottom: `${bottom.value}px`,
   height: `${Math.abs(height.value)}px`,
+  width: width.value
 }));
 
 watch(internalModelValue, setBottom);
@@ -180,6 +181,7 @@ watch(internalModelValue, (value) => (lock.value = value));
   background-color: white;
   left: 50%;
   transform: translate(-50%, 0);
+  max-width: 100vw;
 
   &--open {
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
