@@ -12,11 +12,13 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "format": "prettier --write src/",
+    "test": "vitest"
   },
   "dependencies": {
     "@vueuse/core": "^10.2.0",
     "hammerjs": "^2.0.8",
+    "happy-dom": "6.0.4",
     "vue": "^3.3.4"
   },
   "devDependencies": {
