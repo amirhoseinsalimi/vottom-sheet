@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import VBottomSheet from '@/components/BottomSheet/VBottomSheet.vue'
+import VottomSheet from '@/components/BottomSheet/VottomSheet.vue'
 import { ref } from 'vue'
 
 const model = ref(false)
@@ -9,7 +9,7 @@ const model = ref(false)
   <div>
     <button @click="model = true">Click me</button>
 
-    <VBottomSheet v-model="model">
+    <VottomSheet v-model="model">
       <div style="color: black">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quos cum! Suscipit maxime
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, quos cum! Suscipit maxime
@@ -25,7 +25,7 @@ const model = ref(false)
         voluptas aperiam voluptates placeat similique?
         voluptas aperiam voluptates placeat similique?
       </div>
-    </VBottomSheet>
+    </VottomSheet>
   </div>
 </template>
 

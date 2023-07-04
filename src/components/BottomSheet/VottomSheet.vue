@@ -2,8 +2,8 @@
 import 'hammerjs'
 import { computed, onMounted, ref, watch } from 'vue'
 import { useVModel, useWindowSize } from '@vueuse/core'
-import type { Emits, Props } from './VBottomSheet.types'
-import { MAX_OPACITY } from './VBottomSheet.constants'
+import type { Emits, Props } from './VottomSheet.types'
+import { MAX_OPACITY } from './VottomSheet.constants'
 import BaseOverlay from '@/components/Overlay/VOverlay.vue'
 
 const props = withDefaults(defineProps<Props>(), {
