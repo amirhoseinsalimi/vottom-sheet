@@ -5,6 +5,7 @@ import { useVModel, useWindowSize } from '@vueuse/core'
 import type { Emits, Props } from './VottomSheet.types'
 import { MAX_OPACITY } from './VottomSheet.constants'
 import BaseOverlay from '@/components/Overlay/VOverlay.vue'
+import { useLockDocumentOverflow } from '@/composables'
 
 const props = withDefaults(defineProps<Props>(), {
   fullScreen: false
@@ -145,18 +146,9 @@ function registerTouchEvents() {
 onMounted(registerTouchEvents)
 
 // SCROLLING
-const lockScroll = () => (document.body.style.overflowY = 'hidden')
-const unlockScroll = () => (document.body.style.overflowY = 'auto')
+const lock = useLockDocumentOverflow()
 
-function toggleDocumentScroll(scroll: boolean) {
-  if (scroll) {
-    lockScroll()
-  } else {
-    unlockScroll()
-  }
-}
-
-watch(internalModelValue, toggleDocumentScroll)
+watch(internalModelValue, (value) => (lock.value = value))
 </script>
 
 <template>
