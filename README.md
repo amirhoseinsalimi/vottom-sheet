@@ -14,7 +14,7 @@ application.
 ## Installation
 
 ```
-npm:
+# npm:
 npm install vottom-sheet
 
 # or yarn:
@@ -53,7 +53,7 @@ Vottom Sheet supports the following props:
 
 - `modelValue` (Boolean, required): Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).
 - `fullScreen` (Boolean, optional, default: false): Make the component full-screen.
-- More props is going to be added...
+- More props are going to be added...
 
 ## Events
 
