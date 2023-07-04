@@ -1,7 +1,7 @@
 {
   "name": "vottom-sheet",
   "description": "A sleek, highly responsive, touch-friendly, full-featured Bottom Sheet component for Vue.js",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": true,
   "scripts": {
     "dev": "vite",
