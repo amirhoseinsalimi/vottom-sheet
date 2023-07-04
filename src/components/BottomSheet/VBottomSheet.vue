@@ -21,9 +21,17 @@ const content = ref<HTMLDivElement | null>(null)
 
 const bottom = ref(0)
 const contentHeight = ref(0)
-const handleHeight = computed(() => (
-    handle.value ? handle.value.clientHeight : 0
-))
+const handleHeight = computed(() => {
+  if (!handle.value) {
+    return 0
+  }
+
+  if (!(handle.value instanceof HTMLElement)) {
+    return
+  }
+
+  return handle.value.clientHeight
+})
 
 function setBottomIfClosed() {
   if (props.fullScreen) {
@@ -33,20 +41,24 @@ function setBottomIfClosed() {
   }
 }
 
-function calculateContentHeight() {
+const contentAndHandleHeight = computed(() => {
   if (!content.value) {
-    return 0
+    return handleHeight.value
   }
 
-  return -(content.value.clientHeight + handleHeight.value)
-}
+  if (!(content.value instanceof HTMLElement)) {
+    return handleHeight.value
+  }
+
+  return content.value.clientHeight + handleHeight.value
+})
 
 function setHeightBaseOnContent() {
   if (!content.value) {
     return
   }
 
-  contentHeight.value = calculateContentHeight()
+  contentHeight.value = -contentAndHandleHeight.value
 
   setBottom(props.modelValue)
 }
@@ -95,6 +107,10 @@ watch(internalModelValue, setBottom)
 // TOUCH EVENTS
 function registerTouchEvents() {
   if (!handle.value) {
+    return
+  }
+
+  if (!(handle.value instanceof HTMLElement)) {
     return
   }
 
