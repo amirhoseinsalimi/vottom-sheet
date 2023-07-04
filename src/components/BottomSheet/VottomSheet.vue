@@ -60,7 +60,7 @@ function setHeightBaseOnContent() {
 
   contentHeight.value = -contentAndHandleHeight.value
 
-  setBottom(props.modelValue)
+  setBottom(internalModelValue.value)
 }
 
 watch(content, setHeightBaseOnContent)
@@ -156,7 +156,7 @@ function toggleDocumentScroll(scroll: boolean) {
   }
 }
 
-watch(() => props.modelValue, toggleDocumentScroll)
+watch(internalModelValue, toggleDocumentScroll)
 </script>
 
 <template>
