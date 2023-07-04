@@ -1,154 +1,152 @@
 <script setup lang="ts">
-import 'hammerjs'
-import { computed, onMounted, ref, watch } from 'vue'
-import { useVModel, useWindowSize } from '@vueuse/core'
-import type { Emits, Props } from './VottomSheet.types'
-import { MAX_OPACITY } from './VottomSheet.constants'
-import BaseOverlay from '@/components/Overlay/VOverlay.vue'
-import { useLockDocumentOverflow } from '@/composables'
+import 'hammerjs';
+import { computed, onMounted, ref, watch } from 'vue';
+import { useVModel, useWindowSize } from '@vueuse/core';
+import { useLockDocumentOverflow } from '@/composables/index.ts';
+import BaseOverlay from '@/components/Overlay/VOverlay.vue';
+import { MAX_OPACITY } from './VottomSheet.constants.ts';
+import type { Emits, Props } from './VottomSheet.types';
 
 const props = withDefaults(defineProps<Props>(), {
-  fullScreen: false
-})
+  fullScreen: false,
+});
 
-const emit = defineEmits<Emits>()
+const emit = defineEmits<Emits>();
 
-const internalModelValue = useVModel(props, 'modelValue', emit)
+const internalModelValue = useVModel(props, 'modelValue', emit);
 
 // HEIGHT
-const handle = ref<HTMLDivElement | null>(null)
-const content = ref<HTMLDivElement | null>(null)
+const handle = ref<HTMLDivElement | null>(null);
+const content = ref<HTMLDivElement | null>(null);
 
-const bottom = ref(0)
-const totalContentHeight = ref(0)
+const bottom = ref(0);
+const totalContentHeight = ref(0);
 
 const handleHeight = computed(() => {
   if (!handle.value) {
-    return 0
+    return 0;
   }
 
   if (!(handle.value instanceof HTMLElement)) {
-    return
+    return 0;
   }
 
-  return handle.value.clientHeight
-})
+  return handle.value.clientHeight;
+});
 
 function setBottomIfClosed() {
   if (props.fullScreen) {
-    bottom.value = -window.innerHeight
+    bottom.value = -window.innerHeight;
   } else {
-    bottom.value = totalContentHeight.value
+    bottom.value = totalContentHeight.value;
   }
 }
 
 const contentAndHandleHeight = computed(() => {
   if (!content.value) {
-    return handleHeight.value
+    return handleHeight.value;
   }
 
   if (!(content.value instanceof HTMLElement)) {
-    return handleHeight.value
+    return handleHeight.value;
   }
 
-  return content.value.clientHeight + handleHeight.value
-})
-
-function setHeightBaseOnContent() {
-  if (!content.value) {
-    return
-  }
-
-  totalContentHeight.value = -contentAndHandleHeight.value
-
-  setBottom(internalModelValue.value)
-}
-
-watch(content, setHeightBaseOnContent)
-
-const { width: windowWidth } = useWindowSize()
-
-watch(windowWidth, setBottomIfClosed)
-
-const height = computed(() =>
-    props.fullScreen
-        ? windowWidth.value && -window.innerHeight
-        : totalContentHeight.value
-)
-
-// WIDTH
-const width = computed(() => (props.fullScreen ? 'lg:w-full' : 'lg:w-8/12'))
-
-// BORDER RADIUS
-const borderRadius = computed(() => !props.fullScreen && 'bottom-sheet--bordered')
-
-// OVERLAY OPACITY
-const backdropOpacity = computed(() => MAX_OPACITY - (bottom.value / height.value) * MAX_OPACITY)
-
-// V-MODEL
-const close = () => emit('update:modelValue', false)
-
-const openStateClass = computed(() => internalModelValue && 'bottom-sheet--open')
-const openStateStyle = computed(() => ({
-  bottom: `${bottom.value}px`,
-  height: `${Math.abs(height.value)}px`
-}))
+  return content.value.clientHeight + handleHeight.value;
+});
 
 function setBottom(modelValue: boolean) {
   if (modelValue) {
-    bottom.value = 0
-    return
+    bottom.value = 0;
+    return;
   }
 
-  setBottomIfClosed()
+  setBottomIfClosed();
 }
 
-watch(internalModelValue, setBottom)
+function setHeightBaseOnContent() {
+  if (!content.value) {
+    return;
+  }
+
+  totalContentHeight.value = -contentAndHandleHeight.value;
+
+  setBottom(internalModelValue.value);
+}
+
+watch(content, setHeightBaseOnContent);
+
+const { width: windowWidth } = useWindowSize();
+
+watch(windowWidth, setBottomIfClosed);
+
+const height = computed(() =>
+  props.fullScreen ? windowWidth.value && -window.innerHeight : totalContentHeight.value
+);
+
+// WIDTH
+const width = computed(() => (props.fullScreen ? 'lg:w-full' : 'lg:w-8/12'));
+
+// BORDER RADIUS
+const borderRadius = computed(() => !props.fullScreen && 'bottom-sheet--bordered');
+
+// OVERLAY OPACITY
+const backdropOpacity = computed(() => MAX_OPACITY - (bottom.value / height.value) * MAX_OPACITY);
+
+// V-MODEL
+const close = () => emit('update:modelValue', false);
+
+const openStateClass = computed(() => internalModelValue && 'bottom-sheet--open');
+const openStateStyle = computed(() => ({
+  bottom: `${bottom.value}px`,
+  height: `${Math.abs(height.value)}px`,
+}));
+
+watch(internalModelValue, setBottom);
 
 // TOUCH EVENTS
 function registerTouchEvents() {
   if (!handle.value) {
-    return
+    return;
   }
 
   if (!(handle.value instanceof HTMLElement)) {
-    return
+    return;
   }
 
-  const hammerWrapper = new Hammer(handle.value, {})
+  const hammerWrapper = new Hammer(handle.value, {});
 
-  hammerWrapper.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL })
+  hammerWrapper.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
   hammerWrapper.on('pan', (ev: any) => {
-    const deltaY = ev.deltaY
+    const { deltaY } = ev;
 
     if (deltaY > 0) {
-      bottom.value = 0 - deltaY
+      bottom.value = 0 - deltaY;
     }
 
     if (!ev.isFinal) {
-      return
+      return;
     }
 
     if (ev.velocityY > 0.6) {
-      close()
-      return
+      close();
+      return;
     }
 
     if (bottom.value <= totalContentHeight.value * 0.6) {
-      close()
+      close();
     } else {
-      bottom.value = 0
+      bottom.value = 0;
     }
-  })
+  });
 }
 
-onMounted(registerTouchEvents)
+onMounted(registerTouchEvents);
 
 // SCROLLING
-const lock = useLockDocumentOverflow()
+const lock = useLockDocumentOverflow();
 
-watch(internalModelValue, (value) => (lock.value = value))
+watch(internalModelValue, (value) => (lock.value = value));
 </script>
 
 <template>
@@ -160,7 +158,7 @@ watch(internalModelValue, (value) => (lock.value = value))
     :class="[openStateClass, width, borderRadius]"
     :style="openStateStyle"
   >
-    <div class="bottom-sheet__handle" ref="handle">
+    <div ref="handle" class="bottom-sheet__handle">
       <slot name="handle">
         <div class="bottom-sheet__handle-bar" />
       </slot>

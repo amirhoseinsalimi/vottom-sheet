@@ -1,3 +1,3 @@
 export interface Props {
-  opacity?: number
+  opacity?: number;
 }

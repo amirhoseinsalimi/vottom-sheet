@@ -1,21 +1,21 @@
-import { watch } from 'vue'
-import { useToggle } from '@vueuse/core'
+import { watch } from 'vue';
+import { useToggle } from '@vueuse/core';
 
-export function useLockDocumentOverflow() {
-  const [lock] = useToggle(false)
+export default function useLockDocumentOverflow() {
+  const [lock] = useToggle(false);
 
-  const lockScroll = () => (document.body.style.overflowY = 'hidden')
-  const unlockScroll = () => (document.body.style.overflowY = 'auto')
+  const lockScroll = () => (document.body.style.overflowY = 'hidden');
+  const unlockScroll = () => (document.body.style.overflowY = 'auto');
 
   function toggleDocumentScroll(scroll: boolean) {
     if (scroll) {
-      lockScroll()
+      lockScroll();
     } else {
-      unlockScroll()
+      unlockScroll();
     }
   }
 
-  watch(lock, toggleDocumentScroll)
+  watch(lock, toggleDocumentScroll);
 
-  return lock
+  return lock;
 }
