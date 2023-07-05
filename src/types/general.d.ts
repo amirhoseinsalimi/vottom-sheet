@@ -1,0 +1,1 @@
+type StringOrNumber = string | number

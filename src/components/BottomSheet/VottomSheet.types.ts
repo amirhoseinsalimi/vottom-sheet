@@ -1,6 +1,7 @@
 export interface Props {
   modelValue: boolean;
   fullScreen?: boolean;
+  zIndex?: StringOrNumber;
 }
 
 export interface Emits {

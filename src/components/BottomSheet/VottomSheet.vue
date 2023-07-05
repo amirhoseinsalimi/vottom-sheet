@@ -9,6 +9,7 @@ import type { Emits, Props } from './VottomSheet.types';
 
 const props = withDefaults(defineProps<Props>(), {
   fullScreen: false,
+  zIndex: 0,
 });
 
 const emit = defineEmits<Emits>();
@@ -182,6 +183,7 @@ watch(internalModelValue, (value) => (lock.value = value));
   left: 50%;
   transform: translate(-50%, 0);
   max-width: 100vw;
+  z-index: v-bind(zIndex);
 
   &--open {
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.08);
