@@ -1,6 +1,6 @@
 export interface Props {
   modelValue: boolean;
-  fullScreen?: boolean;
+  fullscreen?: boolean;
   zIndex?: StringOrNumber;
 }
 

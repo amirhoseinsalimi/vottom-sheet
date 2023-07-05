@@ -8,7 +8,7 @@ import { MAX_OPACITY } from './VottomSheet.constants.ts';
 import type { Emits, Props } from './VottomSheet.types';
 
 const props = withDefaults(defineProps<Props>(), {
-  fullScreen: false,
+  fullscreen: false,
   zIndex: 0,
 });
 
@@ -36,7 +36,7 @@ const handleHeight = computed(() => {
 });
 
 function setBottomIfClosed() {
-  if (props.fullScreen) {
+  if (props.fullscreen) {
     bottom.value = -window.innerHeight;
   } else {
     bottom.value = totalContentHeight.value;
@@ -81,14 +81,14 @@ const { width: windowWidth } = useWindowSize();
 watch(windowWidth, setBottomIfClosed);
 
 const height = computed(() =>
-  props.fullScreen ? windowWidth.value && -window.innerHeight : totalContentHeight.value
+  props.fullscreen ? windowWidth.value && -window.innerHeight : totalContentHeight.value
 );
 
 // WIDTH
-const width = computed(() => (props.fullScreen ? '100vw' : '768px'));
+const width = computed(() => (props.fullscreen ? '100vw' : '768px'));
 
 // BORDER RADIUS
-const borderRadius = computed(() => !props.fullScreen && 'bottom-sheet--bordered');
+const borderRadius = computed(() => !props.fullscreen && 'bottom-sheet--bordered');
 
 // OVERLAY OPACITY
 const backdropOpacity = computed(() => MAX_OPACITY - (bottom.value / height.value) * MAX_OPACITY);
