@@ -190,7 +190,7 @@ watch(internalModelValue, (value) => (lock.value = value));
   }
 
   &--bordered {
-    border-radius: 1rem 1rem 0 0;
+    border-radius: 28px 28px 0 0;
   }
 
   &__handle {
