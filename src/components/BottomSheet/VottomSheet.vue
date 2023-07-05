@@ -85,7 +85,7 @@ const height = computed(() =>
 );
 
 // WIDTH
-const width = computed(() => (props.fullscreen ? '100vw' : '768px'));
+const width = computed(() => (props.fullscreen ? '100vw' : '640px'));
 
 // BORDER RADIUS
 const borderRadius = computed(() => !props.fullscreen && 'bottom-sheet--bordered');
