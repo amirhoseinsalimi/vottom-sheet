@@ -13,20 +13,23 @@ application.
 
 ## Installation
 
-```
+```bash copy
 # npm:
 npm install vottom-sheet
-
+```
+```bash copy
 # or yarn:
 yarn add vottom-sheet
+```
 
+```bash copy
  # or pnpm:
 pnpm add vottom-sheet
 ```
 
 ## Usage
 
-```vue
+```vue copy
 <script lang="ts" setup>
 import { ref } from 'vue';
 import VottomSheet from 'vottom-sheet';
