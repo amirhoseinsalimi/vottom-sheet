@@ -17,13 +17,14 @@ application.
 # npm:
 npm install vottom-sheet
 ```
+
 ```bash copy
 # or yarn:
 yarn add vottom-sheet
 ```
 
 ```bash copy
- # or pnpm:
+# or pnpm:
 pnpm add vottom-sheet
 ```
 
@@ -38,14 +39,10 @@ const model = ref(false);
 </script>
 
 <template>
-  <button type="button" @click="model = true">
-    Open Vottom Sheet
-  </button>
+  <button type="button" @click="model = true">Open Vottom Sheet</button>
 
   <VottomSheet v-model="model">
-    <div>
-      Hello from Vottom Sheet
-    </div>
+    <div>Hello from Vottom Sheet</div>
   </VottomSheet>
 </template>
 ```
@@ -54,8 +51,9 @@ const model = ref(false);
 
 Vottom Sheet supports the following props:
 
-- `modelValue` (Boolean, required): Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).
-- `fullscreen` (Boolean, optional, default: false): Make the component fullscreen.
+- `modelValue` (`Boolean`, required): Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).
+- `fullscreen` (`Boolean`, optional, default: `false`): Make the component fullscreen.
+- `zIndex` (`String` | `Number`, optional, default: `0`): Specify the `z-index` of the bottom-sheet.
 - More props are going to be added...
 
 ## Events
@@ -63,6 +61,6 @@ Vottom Sheet supports the following props:
 - `update:modelValue` (Payload: Boolean): Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`). Can be used to listen on state changes and triggering custom code.
 
 ## Slots
+
 - `default`: Insert the content that is going to be displayed inside bottom sheet.
 - `handle`: Insert custom handle for bottom sheet which is displayed above the `content` slot and can be used to drag the component.
-
