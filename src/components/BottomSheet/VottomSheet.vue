@@ -23,6 +23,31 @@ const content = ref<HTMLDivElement | null>(null);
 const bottom = ref(0);
 const totalContentHeight = ref(0);
 
+const handleYMargins = computed(() => {
+  if (!handle.value) {
+    return 0;
+  }
+
+  if (!(handle.value instanceof HTMLElement)) {
+    return 0;
+  }
+
+  if (!handle.value.firstElementChild) {
+    return 0;
+  }
+
+  const marginTop = Number.parseInt(
+    window.getComputedStyle(handle.value.firstElementChild).marginTop,
+    10
+  );
+  const marginBottom = Number.parseInt(
+    window.getComputedStyle(handle.value.firstElementChild).marginBottom,
+    10
+  );
+
+  return marginTop + marginBottom;
+});
+
 const handleHeight = computed(() => {
   if (!handle.value) {
     return 0;
@@ -32,7 +57,7 @@ const handleHeight = computed(() => {
     return 0;
   }
 
-  return handle.value.clientHeight;
+  return handle.value.clientHeight + handleYMargins.value;
 });
 
 function setBottomIfClosed() {
@@ -100,7 +125,7 @@ const openStateClass = computed(() => internalModelValue && 'bottom-sheet--open'
 const openStateStyle = computed(() => ({
   bottom: `${bottom.value}px`,
   height: `${Math.abs(height.value)}px`,
-  width: width.value
+  width: width.value,
 }));
 
 watch(internalModelValue, setBottom);
