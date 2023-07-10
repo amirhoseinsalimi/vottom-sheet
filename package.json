@@ -10,7 +10,8 @@
     ".": {
       "import": "./dist/index.mjs",
       "require": "./dist/index.umd.js"
-    }
+    },
+    "./style.css": "./dist/style.css"
   },
   "files": [
     "dist"
