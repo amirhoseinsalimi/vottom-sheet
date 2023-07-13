@@ -45,13 +45,13 @@ devDependencies:
     version: 4.2.3(vite@4.4.3)(vue@3.3.4)
   '@vue/eslint-config-airbnb':
     specifier: ^7.0.0
-    version: 7.0.0(@typescript-eslint/parser@5.61.0)(eslint-plugin-vue@9.11.0)(eslint@8.39.0)
+    version: 7.0.0(@typescript-eslint/parser@5.61.0)(eslint-plugin-vue@9.15.1)(eslint@8.39.0)
   '@vue/eslint-config-prettier':
     specifier: ^7.1.0
     version: 7.1.0(eslint@8.39.0)(prettier@2.8.8)
   '@vue/eslint-config-typescript':
     specifier: ^11.0.3
-    version: 11.0.3(eslint-plugin-vue@9.11.0)(eslint@8.39.0)(typescript@5.0.4)
+    version: 11.0.3(eslint-plugin-vue@9.15.1)(eslint@8.39.0)(typescript@5.0.4)
   '@vue/test-utils':
     specifier: ^2.3.2
     version: 2.3.2(vue@3.3.4)
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^4.2.1
     version: 4.2.1(eslint-config-prettier@8.8.0)(eslint@8.39.0)(prettier@2.8.8)
   eslint-plugin-vue:
-    specifier: ^9.11.0
-    version: 9.11.0(eslint@8.39.0)
+    specifier: ^9.15.1
+    version: 9.15.1(eslint@8.39.0)
   jsdom:
     specifier: ^22.1.0
     version: 22.1.0
@@ -824,7 +824,7 @@ packages:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
 
-  /@vue/eslint-config-airbnb@7.0.0(@typescript-eslint/parser@5.61.0)(eslint-plugin-vue@9.11.0)(eslint@8.39.0):
+  /@vue/eslint-config-airbnb@7.0.0(@typescript-eslint/parser@5.61.0)(eslint-plugin-vue@9.15.1)(eslint@8.39.0):
     resolution: {integrity: sha512-qC3HRnvaDWRocDKPVKUnjWLXo1NDfDSPKwizc49llN/mRZF2Q9D/7wcAMwzCVzPM/D80ZUz0sy1cq9u/6jFnqw==}
     peerDependencies:
       eslint: ^8.2.0
@@ -837,7 +837,7 @@ packages:
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.61.0)(eslint@8.39.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.39.0)
       eslint-plugin-react: 7.32.2(eslint@8.39.0)
-      eslint-plugin-vue: 9.11.0(eslint@8.39.0)
+      eslint-plugin-vue: 9.15.1(eslint@8.39.0)
       eslint-plugin-vuejs-accessibility: 1.2.0(eslint@8.39.0)
       vue-eslint-parser: 9.3.1(eslint@8.39.0)
     transitivePeerDependencies:
@@ -859,7 +859,7 @@ packages:
       prettier: 2.8.8
     dev: true
 
-  /@vue/eslint-config-typescript@11.0.3(eslint-plugin-vue@9.11.0)(eslint@8.39.0)(typescript@5.0.4):
+  /@vue/eslint-config-typescript@11.0.3(eslint-plugin-vue@9.15.1)(eslint@8.39.0)(typescript@5.0.4):
     resolution: {integrity: sha512-dkt6W0PX6H/4Xuxg/BlFj5xHvksjpSlVjtkQCpaYJBIEuKj2hOVU7r+TIe+ysCwRYFz/lGqvklntRkCAibsbPw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -873,7 +873,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.61.0(@typescript-eslint/parser@5.61.0)(eslint@8.39.0)(typescript@5.0.4)
       '@typescript-eslint/parser': 5.61.0(eslint@8.39.0)(typescript@5.0.4)
       eslint: 8.39.0
-      eslint-plugin-vue: 9.11.0(eslint@8.39.0)
+      eslint-plugin-vue: 9.15.1(eslint@8.39.0)
       typescript: 5.0.4
       vue-eslint-parser: 9.3.1(eslint@8.39.0)
     transitivePeerDependencies:
@@ -1807,8 +1807,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-vue@9.11.0(eslint@8.39.0):
-    resolution: {integrity: sha512-bBCJAZnkBV7ATH4Z1E7CvN3nmtS4H7QUU3UBxPdo8WohRU+yHjnQRALpTbxMVcz0e4Mx3IyxIdP5HYODMxK9cQ==}
+  /eslint-plugin-vue@9.15.1(eslint@8.39.0):
+    resolution: {integrity: sha512-CJE/oZOslvmAR9hf8SClTdQ9JLweghT6JCBQNrT2Iel1uVw0W0OLJxzvPd6CxmABKCvLrtyDnqGV37O7KQv6+A==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
