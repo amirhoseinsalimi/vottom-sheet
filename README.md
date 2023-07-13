@@ -15,17 +15,17 @@ application.
 
 ```bash copy
 # npm:
-npm install vottom-sheet
+npm install @amho/vottom-sheet
 ```
 
 ```bash copy
 # or yarn:
-yarn add vottom-sheet
+yarn add @amho/vottom-sheet
 ```
 
 ```bash copy
 # or pnpm:
-pnpm add vottom-sheet
+pnpm add @amho/vottom-sheet
 ```
 
 ## How to use
@@ -59,7 +59,7 @@ Vottom Sheet supports the following props:
 
 ## Events
 
-- `update:modelValue` (Payload: Boolean): Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`). Can be used to listen on state changes and triggering custom code.
+- `update:modelValue` (Payload: Boolean): Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`). Can be used to listen on state changes and trigger custom code.
 
 ## Slots
 
