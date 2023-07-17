@@ -31,21 +31,8 @@ pnpm add @amho/vottom-sheet
 ## How to use
 
 ```vue copy
-<script lang="ts" setup>
-import { ref } from 'vue';
-import { VottomSheet } from '@amho/vottom-sheet';
-import '@amho/vottom-sheet/style.css'
 
-const model = ref(false);
-</script>
 
-<template>
-  <button type="button" @click="model = true">Open Vottom Sheet</button>
-
-  <VottomSheet v-model="model">
-    <div>Hello from Vottom Sheet!</div>
-  </VottomSheet>
-</template>
 ```
 
 ## Props
@@ -55,6 +42,7 @@ Vottom Sheet supports the following props:
 - `modelValue` (`Boolean`, required): Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).
 - `fullscreen` (`Boolean`, optional, default: `false`): Make the component fullscreen.
 - `zIndex` (`String` | `Number`, optional, default: `0`): Specify the `z-index` of the bottom-sheet.
+- `closeOnEscape` (`Boolean`, optional, default: `false`): Whether to close the bottom sheet on ECS key press.
 - More props are going to be added...
 
 ## Events
