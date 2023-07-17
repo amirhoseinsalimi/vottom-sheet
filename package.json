@@ -1,7 +1,7 @@
 {
   "name": "@amho/vottom-sheet",
   "description": "A sleek, highly responsive, touch-friendly, full-featured Bottom Sheet component for Vue.js",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "private": true,
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
@@ -70,6 +70,15 @@
     "email": "ahosein.salimi@gmail.com",
     "url": "https://github.com/amirhoseinsalimi"
   },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "bottomsheet",
+    "bottom-sheet",
+    "bottomsheets",
+    "action-sheet",
+    "actionsheet"
+  ],
   "bugs": {
     "url": "https://github.com/amirhoseinsalimi/vottom-sheet/issues"
   },
