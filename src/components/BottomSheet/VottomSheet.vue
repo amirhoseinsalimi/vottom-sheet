@@ -20,7 +20,9 @@ const internalModelValue = useVModel(props, 'modelValue', emit);
 const handle = ref<HTMLDivElement | null>(null);
 const content = ref<HTMLDivElement | null>(null);
 
-const bottom = ref(0);
+const { width: windowWidth, height: initialBottomOffset } = useWindowSize()
+
+const bottom = ref(-initialBottomOffset.value)
 const totalContentHeight = ref(0);
 
 const handleYMargins = computed(() => {
@@ -100,8 +102,6 @@ function setHeightBaseOnContent() {
 }
 
 watch(content, setHeightBaseOnContent);
-
-const { width: windowWidth } = useWindowSize();
 
 watch(windowWidth, setBottomIfClosed);
 
