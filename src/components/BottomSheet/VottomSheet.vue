@@ -2,7 +2,7 @@
 import 'hammerjs';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useVModel, useWindowSize } from '@vueuse/core';
-import { useLockDocumentOverflow } from '@/composables/index.ts';
+import { useLockDocumentOverflow, useOnEscapeKey } from '@/composables';
 import BaseOverlay from '@/components/Overlay/VOverlay.vue';
 import { MAX_OPACITY } from './VottomSheet.constants.ts';
 import type { Emits, Props } from './VottomSheet.types';
@@ -10,6 +10,7 @@ import type { Emits, Props } from './VottomSheet.types';
 const props = withDefaults(defineProps<Props>(), {
   fullscreen: false,
   zIndex: 0,
+  closeOnEscape: false,
 });
 
 const emit = defineEmits<Emits>();
@@ -20,9 +21,9 @@ const internalModelValue = useVModel(props, 'modelValue', emit);
 const handle = ref<HTMLDivElement | null>(null);
 const content = ref<HTMLDivElement | null>(null);
 
-const { width: windowWidth, height: initialBottomOffset } = useWindowSize()
+const { width: windowWidth, height: initialBottomOffset } = useWindowSize();
 
-const bottom = ref(-initialBottomOffset.value)
+const bottom = ref(-initialBottomOffset.value);
 const totalContentHeight = ref(0);
 
 const handleYMargins = computed(() => {
@@ -174,6 +175,9 @@ onMounted(registerTouchEvents);
 const lock = useLockDocumentOverflow();
 
 watch(internalModelValue, (value) => (lock.value = value));
+
+// DISMISS WITH ESCAPE KEY
+useOnEscapeKey(close);
 </script>
 
 <template>
