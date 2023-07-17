@@ -29,7 +29,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@vueuse/core": "^10.2.0",
+    "@vueuse/core": "^10.2.1",
     "hammerjs": "^2.0.8",
     "happy-dom": "6.0.4",
     "vue": "^3.3.4"
