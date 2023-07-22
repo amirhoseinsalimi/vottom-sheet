@@ -1,4 +1,4 @@
-import { watch } from 'vue';
+import { onBeforeUnmount, watch } from "vue";
 import { useToggle } from '@vueuse/core';
 
 export default function useLockDocumentOverflow() {
@@ -16,6 +16,8 @@ export default function useLockDocumentOverflow() {
   }
 
   watch(lock, toggleDocumentScroll);
+
+  onBeforeUnmount(unlockScroll)
 
   return lock;
 }
