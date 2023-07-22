@@ -22,11 +22,13 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
+    "build:tsc": "vue-tsc --noEmit",
+    "type-check": "pnpm run build:tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@vueuse/core": "^10.2.1",
@@ -35,6 +37,8 @@
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
     "@rushstack/eslint-patch": "^1.2.0",
     "@tsconfig/node18": "^2.0.1",
     "@types/hammerjs": "^2.0.41",
@@ -53,7 +57,9 @@
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.15.1",
+    "husky": "^8.0.3",
     "jsdom": "^22.1.0",
+    "lint-staged": "^13.2.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.0",
     "sass": "^1.63.6",
