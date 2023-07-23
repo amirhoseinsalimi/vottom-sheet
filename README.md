@@ -31,8 +31,21 @@ pnpm add @amho/vottom-sheet
 ## How to use
 
 ```vue copy
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { VottomSheet } from '@amho/vottom-sheet';
+import '@amho/vottom-sheet/style.css'
 
+const model = ref(false);
+</script>
 
+<template>
+  <button type="button" @click="model = true">Open Vottom Sheet</button>
+
+  <VottomSheet v-model="model">
+    <div>Hello from Vottom Sheet!</div>
+  </VottomSheet>
+</template>
 ```
 
 ## Props
