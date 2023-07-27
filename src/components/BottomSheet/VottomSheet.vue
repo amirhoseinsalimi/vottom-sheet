@@ -23,7 +23,7 @@ const content = ref<HTMLDivElement | null>(null);
 
 const { width: windowWidth, height: initialBottomOffset } = useWindowSize();
 
-const bottom = ref(-initialBottomOffset.value);
+const bottom = ref(-document.body.scrollHeight);
 const totalContentHeight = ref(0);
 
 const handleYMargins = computed(() => {
@@ -64,11 +64,7 @@ const handleHeight = computed(() => {
 });
 
 function setBottomIfClosed() {
-  if (props.fullscreen) {
-    bottom.value = -window.innerHeight;
-  } else {
-    bottom.value = totalContentHeight.value;
-  }
+  bottom.value = -document.body.scrollHeight;
 }
 
 const contentAndHandleHeight = computed(() => {
