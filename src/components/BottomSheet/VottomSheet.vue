@@ -21,7 +21,7 @@ const internalModelValue = useVModel(props, 'modelValue', emit);
 const handle = ref<HTMLDivElement | null>(null);
 const content = ref<HTMLDivElement | null>(null);
 
-const { width: windowWidth, height: initialBottomOffset } = useWindowSize();
+const { width: windowWidth, height: windowHeight } = useWindowSize();
 
 const bottom = ref(-document.body.scrollHeight);
 const totalContentHeight = ref(0);
@@ -103,7 +103,9 @@ watch(content, setHeightBaseOnContent);
 watch(windowWidth, setBottomIfClosed);
 
 const height = computed(() =>
-  props.fullscreen ? windowWidth.value && -window.innerHeight : totalContentHeight.value
+  props.fullscreen
+    ? (windowWidth.value || windowHeight.value) && -window.innerHeight
+    : totalContentHeight.value
 );
 
 // WIDTH
