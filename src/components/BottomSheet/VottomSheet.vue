@@ -2,8 +2,8 @@
 import 'hammerjs';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useVModel, useWindowSize } from '@vueuse/core';
-import { useLockDocumentOverflow, useOnEscapeKey } from '@/composables';
 import BaseOverlay from '@/components/Overlay/VOverlay.vue';
+import { useLockDocumentOverflow, useOnEscapeKey } from '@/composables/index.ts';
 import { MAX_OPACITY } from './VottomSheet.constants.ts';
 import type { Emits, Props } from './VottomSheet.types';
 
@@ -181,24 +181,26 @@ useOnEscapeKey(close);
 </script>
 
 <template>
-  <BaseOverlay v-if="internalModelValue" :opacity="backdropOpacity" @click="close" />
+  <Teleport to="body">
+    <BaseOverlay v-if="internalModelValue" :opacity="backdropOpacity" @click="close" />
 
-  <div
-    v-bind="$attrs"
-    class="bottom-sheet"
-    :class="[openStateClass, width, borderRadius]"
-    :style="openStateStyle"
-  >
-    <div ref="handle" class="bottom-sheet__handle">
-      <slot name="handle">
-        <div class="bottom-sheet__handle-bar" />
-      </slot>
-    </div>
+    <div
+      v-bind="$attrs"
+      class="bottom-sheet"
+      :class="[openStateClass, width, borderRadius]"
+      :style="openStateStyle"
+    >
+      <div ref="handle" class="bottom-sheet__handle">
+        <slot name="handle">
+          <div class="bottom-sheet__handle-bar" />
+        </slot>
+      </div>
 
-    <div ref="content" class="bottom-sheet__content">
-      <slot />
+      <div ref="content" class="bottom-sheet__content">
+        <slot />
+      </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <style scoped lang="scss">
