@@ -111,7 +111,7 @@ watch(windowWidth, setBottomIfClosed);
 const height = computed(() =>
   props.fullscreen
     ? (windowWidth.value || windowHeight.value) && -window.innerHeight
-    : Math.max(totalContentHeight.value, window.innerHeight)
+    : Math.min(totalContentHeight.value, window.innerHeight)
 );
 
 // WIDTH
