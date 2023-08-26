@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import 'hammerjs';
+import Hammer from 'hammerjs';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useVModel, useWindowSize } from '@vueuse/core';
 import BaseOverlay from '@/components/Overlay/VOverlay.vue';
@@ -143,18 +143,18 @@ function registerTouchEvents() {
 
   hammerWrapper.get('pan').set({ direction: Hammer.DIRECTION_VERTICAL });
 
-  hammerWrapper.on('pan', (ev: any) => {
-    const { deltaY } = ev;
+  hammerWrapper.on('pan', (event: HammerInput) => {
+    const { deltaY } = event;
 
     if (deltaY > 0) {
       bottom.value = 0 - deltaY;
     }
 
-    if (!ev.isFinal) {
+    if (!event.isFinal) {
       return;
     }
 
-    if (ev.velocityY > 0.6) {
+    if (event.velocityY > 0.6) {
       close();
       return;
     }
