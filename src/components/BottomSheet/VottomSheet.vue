@@ -21,7 +21,9 @@ const internalModelValue = useVModel(props, 'modelValue', emit);
 const handle = ref<Maybe<HTMLDivElement>>(null);
 const content = ref<Maybe<HTMLDivElement>>(null);
 
-const { width: windowWidth, height: windowHeight } = useWindowSize();
+const { width: windowWidth, height: windowHeight } = useWindowSize({
+  listenOrientation: true,
+});
 
 const bottom = ref(-window.innerHeight);
 const totalContentHeight = ref(0);
