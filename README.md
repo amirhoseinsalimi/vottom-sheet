@@ -56,6 +56,7 @@ Vottom Sheet supports the following props:
 - `fullscreen` (`Boolean`, optional, default: `false`): Make the component fullscreen.
 - `zIndex` (`String` | `Number`, optional, default: `0`): Specify the `z-index` of the bottom sheet.
 - `closeOnEscape` (`Boolean`, optional, default: `false`): Whether to close the bottom sheet on ECS key press.
+- `eager` (`Boolean`, optional, default: `false`): Force the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.
 - More props are going to be added...
 
 ## Events

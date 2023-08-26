@@ -3,6 +3,7 @@ export interface Props {
   fullscreen?: boolean;
   zIndex?: StringOrNumber;
   closeOnEscape?: boolean;
+  eager?: boolean;
 }
 
 export interface Emits {

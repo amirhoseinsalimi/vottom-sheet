@@ -11,6 +11,7 @@ const props = withDefaults(defineProps<Props>(), {
   fullscreen: false,
   zIndex: 0,
   closeOnEscape: false,
+  eager: false,
 });
 
 const emit = defineEmits<Emits>();
@@ -182,6 +183,9 @@ watch(internalModelValue, (value) => (lock.value = value));
 
 // DISMISS WITH ESCAPE KEY
 useOnEscapeKey(close);
+
+// EAGER
+const shouldMountContent = computed(() => props.eager || internalModelValue.value);
 </script>
 
 <template>
@@ -200,7 +204,7 @@ useOnEscapeKey(close);
         </slot>
       </div>
 
-      <div ref="content" class="bottom-sheet__content">
+      <div v-if="shouldMountContent" ref="content" class="bottom-sheet__content">
         <slot />
       </div>
     </div>
