@@ -18,8 +18,8 @@ const emit = defineEmits<Emits>();
 const internalModelValue = useVModel(props, 'modelValue', emit);
 
 // HEIGHT
-const handle = ref<HTMLDivElement | null>(null);
-const content = ref<HTMLDivElement | null>(null);
+const handle = ref<Maybe<HTMLDivElement>>(null);
+const content = ref<Maybe<HTMLDivElement>>(null);
 
 const { width: windowWidth, height: windowHeight } = useWindowSize();
 
