@@ -182,7 +182,9 @@ const lock = useLockDocumentOverflow();
 watch(internalModelValue, (value) => (lock.value = value));
 
 // DISMISS WITH ESCAPE KEY
-useOnEscapeKey(close);
+if (props.closeOnEscape) {
+  useOnEscapeKey(close);
+}
 
 // EAGER
 const shouldMountContent = computed(() => props.eager || internalModelValue.value);
