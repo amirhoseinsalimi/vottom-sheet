@@ -34,7 +34,6 @@ pnpm add @amho/vottom-sheet
 <script lang="ts" setup>
 import { ref } from 'vue';
 import { VottomSheet } from '@amho/vottom-sheet';
-import '@amho/vottom-sheet/style.css'
 
 const model = ref(false);
 </script>
@@ -46,24 +45,31 @@ const model = ref(false);
     <div>Hello from Vottom Sheet!</div>
   </VottomSheet>
 </template>
+
+<style src="@amho/vottom-sheet/style.css" />
 ```
 
 ## Props
 
-Vottom Sheet supports the following props:
+Vottom Sheet supports the following props (More props are going to be added):
 
-- `modelValue` (`Boolean`, required): Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).
-- `fullscreen` (`Boolean`, optional, default: `false`): Make the component fullscreen.
-- `zIndex` (`String` | `Number`, optional, default: `0`): Specify the `z-index` of the bottom sheet.
-- `closeOnEscape` (`Boolean`, optional, default: `false`): Whether to close the bottom sheet on `Esc` key press.
-- `eager` (`Boolean`, optional, default: `false`): Force the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO.
-- More props are going to be added...
+| Prop            | Type                 | Required                | Default Value | Description                                                                                                                                                    |
+|-----------------|----------------------|-------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `modelValue`    | `Boolean`            | <ul><li> [x] </li></ul> | -             | Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).                                  |
+| `fullscreen`    | `Boolean`            | <ul><li> [ ] </li></ul> | `false`       | Make the component fullscreen.                                                                                                                                 |
+| `zIndex`        | `String` or `Number` | <ul><li> [ ] </li></ul> | `0`           | Specify the `z-index` of the bottom sheet.                                                                                                                     |
+| `closeOnEscape` | `Boolean`            | <ul><li> [ ] </li></ul> | `false`       | Whether to close the bottom sheet on `Esc` key press.                                                                                                          |
+| `eager`         | `Boolean`            | <ul><li> [ ] </li></ul> | `false`       | Force the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. |
 
 ## Events
 
-- `update:modelValue` (Payload: Boolean): Works in pair with `modelValue` prop to enable 2-way data binding (`v-model`). Can be used to listen on state changes and trigger custom code.
+| Event               | Payload Type | Description                                                                                                                                    |
+|---------------------|--------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| `update:modelValue` | `Boolean`    | Works in pair with `modelValue` prop to enable 2-way data binding (`v-model`). Can be used to listen on state changes and trigger custom code. |
 
 ## Slots
 
-- `default`: Insert the content that is going to be displayed inside the bottom sheet.
-- `handle`: Insert a custom handle for the bottom sheet which is displayed above the `content` slot and can be used to drag the component.
+| Slot      | Description                                                                                                                    |
+|-----------|--------------------------------------------------------------------------------------------------------------------------------|
+| `default` | Insert the content that is going to be displayed inside the bottom sheet.                                                      |
+| `handle`  | Insert a custom handle for the bottom sheet which is displayed above the `content` slot and can be used to drag the component. |
