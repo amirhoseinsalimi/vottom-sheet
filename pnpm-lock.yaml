@@ -51,13 +51,13 @@ devDependencies:
     version: 4.2.3(vite@4.4.7)(vue@3.3.4)
   '@vue/eslint-config-airbnb':
     specifier: ^7.0.0
-    version: 7.0.0(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.15.1)(eslint@8.48.0)
+    version: 7.0.0(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.17.0)(eslint@8.48.0)
   '@vue/eslint-config-prettier':
     specifier: ^7.1.0
     version: 7.1.0(eslint@8.48.0)(prettier@3.0.3)
   '@vue/eslint-config-typescript':
     specifier: ^11.0.3
-    version: 11.0.3(eslint-plugin-vue@9.15.1)(eslint@8.48.0)(typescript@5.1.6)
+    version: 11.0.3(eslint-plugin-vue@9.17.0)(eslint@8.48.0)(typescript@5.1.6)
   '@vue/test-utils':
     specifier: ^2.4.1
     version: 2.4.1(vue@3.3.4)
@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^4.2.1
     version: 4.2.1(eslint-config-prettier@9.0.0)(eslint@8.48.0)(prettier@3.0.3)
   eslint-plugin-vue:
-    specifier: ^9.15.1
-    version: 9.15.1(eslint@8.48.0)
+    specifier: ^9.17.0
+    version: 9.17.0(eslint@8.48.0)
   husky:
     specifier: ^8.0.3
     version: 8.0.3
@@ -936,7 +936,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.3
+      semver: 7.5.4
       tsutils: 3.21.0(typescript@5.1.6)
       typescript: 5.1.6
     transitivePeerDependencies:
@@ -957,7 +957,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.62.0(typescript@5.1.6)
       eslint: 8.48.0
       eslint-scope: 5.1.1
-      semver: 7.5.3
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -968,7 +968,7 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       '@typescript-eslint/types': 5.62.0
-      eslint-visitor-keys: 3.4.1
+      eslint-visitor-keys: 3.4.3
     dev: true
 
   /@vitejs/plugin-vue@4.2.3(vite@4.4.7)(vue@3.3.4):
@@ -1090,7 +1090,7 @@ packages:
       '@vue/compiler-dom': 3.3.4
       '@vue/shared': 3.3.4
 
-  /@vue/eslint-config-airbnb@7.0.0(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.15.1)(eslint@8.48.0):
+  /@vue/eslint-config-airbnb@7.0.0(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.17.0)(eslint@8.48.0):
     resolution: {integrity: sha512-qC3HRnvaDWRocDKPVKUnjWLXo1NDfDSPKwizc49llN/mRZF2Q9D/7wcAMwzCVzPM/D80ZUz0sy1cq9u/6jFnqw==}
     peerDependencies:
       eslint: ^8.2.0
@@ -1103,7 +1103,7 @@ packages:
       eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.62.0)(eslint@8.48.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.48.0)
       eslint-plugin-react: 7.32.2(eslint@8.48.0)
-      eslint-plugin-vue: 9.15.1(eslint@8.48.0)
+      eslint-plugin-vue: 9.17.0(eslint@8.48.0)
       eslint-plugin-vuejs-accessibility: 1.2.0(eslint@8.48.0)
       vue-eslint-parser: 9.3.1(eslint@8.48.0)
     transitivePeerDependencies:
@@ -1125,7 +1125,7 @@ packages:
       prettier: 3.0.3
     dev: true
 
-  /@vue/eslint-config-typescript@11.0.3(eslint-plugin-vue@9.15.1)(eslint@8.48.0)(typescript@5.1.6):
+  /@vue/eslint-config-typescript@11.0.3(eslint-plugin-vue@9.17.0)(eslint@8.48.0)(typescript@5.1.6):
     resolution: {integrity: sha512-dkt6W0PX6H/4Xuxg/BlFj5xHvksjpSlVjtkQCpaYJBIEuKj2hOVU7r+TIe+ysCwRYFz/lGqvklntRkCAibsbPw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
@@ -1139,7 +1139,7 @@ packages:
       '@typescript-eslint/eslint-plugin': 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.48.0)(typescript@5.1.6)
       '@typescript-eslint/parser': 5.62.0(eslint@8.48.0)(typescript@5.1.6)
       eslint: 8.48.0
-      eslint-plugin-vue: 9.15.1(eslint@8.48.0)
+      eslint-plugin-vue: 9.17.0(eslint@8.48.0)
       typescript: 5.1.6
       vue-eslint-parser: 9.3.1(eslint@8.48.0)
     transitivePeerDependencies:
@@ -2298,8 +2298,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-vue@9.15.1(eslint@8.48.0):
-    resolution: {integrity: sha512-CJE/oZOslvmAR9hf8SClTdQ9JLweghT6JCBQNrT2Iel1uVw0W0OLJxzvPd6CxmABKCvLrtyDnqGV37O7KQv6+A==}
+  /eslint-plugin-vue@9.17.0(eslint@8.48.0):
+    resolution: {integrity: sha512-r7Bp79pxQk9I5XDP0k2dpUC7Ots3OSWgvGZNu3BxmKK6Zg7NgVtcOB6OCna5Kb9oQwJPl5hq183WD0SY5tZtIQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
@@ -2309,7 +2309,7 @@ packages:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.13
-      semver: 7.5.3
+      semver: 7.5.4
       vue-eslint-parser: 9.3.1(eslint@8.48.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
@@ -2415,7 +2415,7 @@ packages:
     dependencies:
       acorn: 8.9.0
       acorn-jsx: 5.3.2(acorn@8.9.0)
-      eslint-visitor-keys: 3.4.1
+      eslint-visitor-keys: 3.4.3
     dev: true
 
   /espree@9.6.1:
