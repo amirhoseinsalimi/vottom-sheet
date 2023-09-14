@@ -53,13 +53,13 @@ const model = ref(false);
 
 Vottom Sheet supports the following props (More props are going to be added):
 
-| Prop            | Type                 | Required                | Default Value | Description                                                                                                                                                    |
-|-----------------|----------------------|-------------------------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `modelValue`    | `Boolean`            | <ul><li> [x] </li></ul> | -             | Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).                                  |
-| `fullscreen`    | `Boolean`            | <ul><li> [ ] </li></ul> | `false`       | Make the component fullscreen.                                                                                                                                 |
-| `zIndex`        | `String` or `Number` | <ul><li> [ ] </li></ul> | `0`           | Specify the `z-index` of the bottom sheet.                                                                                                                     |
-| `closeOnEscape` | `Boolean`            | <ul><li> [ ] </li></ul> | `false`       | Whether to close the bottom sheet on `Esc` key press.                                                                                                          |
-| `eager`         | `Boolean`            | <ul><li> [ ] </li></ul> | `false`       | Force the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. |
+| Prop            | Type                 | Required | Default Value | Description                                                                                                                                                    |
+|-----------------|----------------------|----------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `modelValue`    | `Boolean`            | ✅        | -             | Control the visibility of the bottom sheet. Works in pair with `@update:modelValue` to enable 2-way data binding (`v-model`).                                  |
+| `fullscreen`    | `Boolean`            | ❌        | `false`       | Make the component fullscreen.                                                                                                                                 |
+| `zIndex`        | `String` or `Number` | ❌        | `0`           | Specify the `z-index` of the bottom sheet.                                                                                                                     |
+| `closeOnEscape` | `Boolean`            | ❌        | `false`       | Whether to close the bottom sheet on `Esc` key press.                                                                                                          |
+| `eager`         | `Boolean`            | ❌        | `false`       | Force the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. |
 
 ## Events
 
