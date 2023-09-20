@@ -41,7 +41,7 @@ const model = ref(false);
 <template>
   <button type="button" @click="model = true">Open Vottom Sheet</button>
 
-  <VottomSheet v-model="model">
+  <VottomSheet v-model="model" closeOnOverlayClick>
     <div>Hello from Vottom Sheet!</div>
   </VottomSheet>
 </template>
@@ -56,7 +56,7 @@ Just wrap the component inside `<ClientOnly>` provided by Nuxt.js. This is becau
 ```vue copy
 <template>
   <ClientOnly>
-    <VottomSheet v-model="model">
+    <VottomSheet v-model="model" closeOnOverlayClick>
       <div>Hello from Vottom Sheet!</div>
     </VottomSheet>
   </ClientOnly>
