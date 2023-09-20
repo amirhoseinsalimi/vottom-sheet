@@ -10,6 +10,7 @@ import type { Emits, Props } from './VottomSheet.types';
 const props = withDefaults(defineProps<Props>(), {
   closeOnEscape: false,
   closeOnOverlayClick: false,
+  disableSwipe: false,
   eager: false,
   fullscreen: false,
   zIndex: 0,
@@ -175,7 +176,9 @@ function registerTouchEvents() {
   });
 }
 
-onMounted(registerTouchEvents);
+if (!props.disableSwipe) {
+  onMounted(registerTouchEvents);
+}
 
 // SCROLLING
 const lock = useLockDocumentOverflow();
