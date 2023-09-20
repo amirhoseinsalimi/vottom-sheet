@@ -8,10 +8,11 @@ import { MAX_OPACITY } from './VottomSheet.constants.ts';
 import type { Emits, Props } from './VottomSheet.types';
 
 const props = withDefaults(defineProps<Props>(), {
+  closeOnEscape: false,
+  closeOnOverlayClick: false,
+  eager: false,
   fullscreen: false,
   zIndex: 0,
-  closeOnEscape: false,
-  eager: false,
 });
 
 const emit = defineEmits<Emits>();
@@ -188,11 +189,20 @@ if (props.closeOnEscape) {
 
 // EAGER
 const shouldMountContent = computed(() => props.eager || internalModelValue.value);
+
+// CLOSE ON OVERLAY CLICK
+function closeIfShouldClose() {
+  if (!props.closeOnOverlayClick) {
+    return;
+  }
+
+  close();
+}
 </script>
 
 <template>
   <Teleport to="body">
-    <BaseOverlay v-if="internalModelValue" :opacity="backdropOpacity" @click="close" />
+    <BaseOverlay v-if="internalModelValue" :opacity="backdropOpacity" @click="closeIfShouldClose" />
 
     <div
       v-bind="$attrs"

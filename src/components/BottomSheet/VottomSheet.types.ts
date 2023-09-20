@@ -1,9 +1,10 @@
 export interface Props {
   modelValue: boolean;
+  closeOnEscape?: boolean;
+  closeOnOverlayClick?: boolean;
+  eager?: boolean;
   fullscreen?: boolean;
   zIndex?: StringOrNumber;
-  closeOnEscape?: boolean;
-  eager?: boolean;
 }
 
 export interface Emits {
