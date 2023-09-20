@@ -4,6 +4,10 @@ Vottom Sheet is a touch-friendly, lightweight and easy-to-use Vue.js component
 that allows you to create smooth bottom sheets or modal dialogs in your web
 application.
 
+<div style="text-align: center">
+  <img src="demo.gif" alt="Lightweight and touch-friendly Bottom Sheet component for Vue.js" />
+</div>
+
 ## Features
 
 - Simple integration: Easily integrate the Vottom Sheet component into your Vue.js project with just a few lines of code.
