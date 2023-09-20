@@ -4,6 +4,10 @@ Vottom Sheet is a touch-friendly, lightweight and easy-to-use Vue.js component
 that allows you to create smooth bottom sheets or modal dialogs in your web
 application.
 
+<div style="text-align: center">
+  <img src="demo.gif" alt="Lightweight and touch-friendly Bottom Sheet component for Vue.js" />
+</div>
+
 ## Features
 
 - Simple integration: Easily integrate the Vottom Sheet component into your Vue.js project with just a few lines of code.
@@ -41,12 +45,26 @@ const model = ref(false);
 <template>
   <button type="button" @click="model = true">Open Vottom Sheet</button>
 
-  <VottomSheet v-model="model">
+  <VottomSheet v-model="model" closeOnOverlayClick>
     <div>Hello from Vottom Sheet!</div>
   </VottomSheet>
 </template>
 
 <style src="@amho/vottom-sheet/style.css" />
+```
+
+## How to use in Nuxt.js
+
+Just wrap the component inside `<ClientOnly>` provided by Nuxt.js. This is because vottom-sheet uses browser APIs that are not available on the server.
+
+```vue copy
+<template>
+  <ClientOnly>
+    <VottomSheet v-model="model" closeOnOverlayClick>
+      <div>Hello from Vottom Sheet!</div>
+    </VottomSheet>
+  </ClientOnly>
+</template>
 ```
 
 ## Props
