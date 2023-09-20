@@ -229,7 +229,7 @@ function closeIfShouldClose() {
 <style scoped lang="scss">
 .bottom-sheet {
   transition: all 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
-  will-change: bottom;
+  will-change: transform;
   position: fixed;
   display: block;
   overflow: auto;

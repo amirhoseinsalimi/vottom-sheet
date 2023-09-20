@@ -23,8 +23,8 @@ const backgroundColorWithOpacity = computed(() => ({
   left: 0;
   right: 0;
   top: 0;
-  background-color: black;
   width: 100vw;
   height: 100vh;
+  will-change: background-color;
 }
 </style>
