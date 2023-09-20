@@ -53,6 +53,20 @@ const model = ref(false);
 <style src="@amho/vottom-sheet/style.css" />
 ```
 
+## How to use in Nuxt.js
+
+Just wrap the component inside `<ClientOnly>` provided by Nuxt.js. This is because vottom-sheet uses browser APIs that are not available on the server.
+
+```vue copy
+<template>
+  <ClientOnly>
+    <VottomSheet v-model="model">
+      <div>Hello from Vottom Sheet!</div>
+    </VottomSheet>
+  </ClientOnly>
+</template>
+```
+
 ## Props
 
 Vottom Sheet supports the following props (More props are going to be added):
