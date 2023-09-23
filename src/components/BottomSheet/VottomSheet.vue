@@ -215,7 +215,9 @@ function closeIfShouldClose() {
     >
       <div ref="handle" class="bottom-sheet__handle">
         <slot name="handle">
-          <div class="bottom-sheet__handle-bar" />
+          <div class="bottom-sheet__handle__wrapper">
+            <div class="bottom-sheet__handle__wrapper__bar" />
+          </div>
         </slot>
       </div>
 
@@ -253,19 +255,24 @@ function closeIfShouldClose() {
   }
 
   &__handle {
-    position: sticky;
-    height: 3.2rem;
     width: 100%;
     background-color: white;
 
-    &-bar {
+    &__wrapper {
+      height: 1.8rem;
       position: relative;
-      top: 0.8rem;
-      margin: 0 auto;
-      background-color: #d1d5db;
-      height: 0.3rem;
-      width: 3rem;
-      border-radius: 0.375rem;
+
+      &__bar {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        background-color: #d1d5db;
+        height: 0.3rem;
+        width: 2.8rem;
+        border-radius: 0.375rem;
+      }
     }
   }
 
