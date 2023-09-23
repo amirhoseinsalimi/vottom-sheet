@@ -219,8 +219,10 @@ function closeIfShouldClose() {
         </slot>
       </div>
 
-      <div v-if="shouldMountContent" ref="content" class="bottom-sheet__content">
-        <slot />
+      <div class="bottom-sheet__content-wrapper">
+        <div v-if="shouldMountContent" ref="content" class="bottom-sheet__content-wrapper__content">
+          <slot />
+        </div>
       </div>
     </div>
   </Teleport>
@@ -231,7 +233,10 @@ function closeIfShouldClose() {
   transition: all 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
   will-change: transform;
   position: fixed;
-  display: block;
+  display: flex;
+  flex: {
+    direction: column;
+  }
   overflow: auto;
   background-color: white;
   left: 50%;
@@ -264,9 +269,14 @@ function closeIfShouldClose() {
     }
   }
 
-  &__content {
-    overflow-y: auto;
-    scroll-behavior: smooth;
+  &__content-wrapper {
+    display: flex;
+    flex: 1 1 0;
+
+    &__content {
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
   }
 }
 </style>
