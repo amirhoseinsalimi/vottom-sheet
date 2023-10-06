@@ -4,7 +4,7 @@ import { computed, onMounted, ref, watch } from 'vue';
 import { useVModel, useWindowSize } from '@vueuse/core';
 import BaseOverlay from '@/components/Overlay/VOverlay.vue';
 import { useLockDocumentOverflow, useOnEscapeKey } from '@/composables/index.ts';
-import { MAX_OPACITY } from './VottomSheet.constants.ts';
+import { DEFAULT_Z_INDEX, MAX_OPACITY } from './VottomSheet.constants.ts';
 import type { Emits, Props } from './VottomSheet.types';
 
 const props = withDefaults(defineProps<Props>(), {
@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
   disableSwipe: false,
   eager: false,
   fullscreen: false,
-  zIndex: 0,
+  zIndex: DEFAULT_Z_INDEX,
 });
 
 const emit = defineEmits<Emits>();
