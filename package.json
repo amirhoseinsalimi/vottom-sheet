@@ -33,7 +33,7 @@
   "dependencies": {
     "@vueuse/core": "^10.4.1",
     "hammerjs": "^2.0.8",
-    "happy-dom": "10.5.2",
+    "happy-dom": "12.5.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
