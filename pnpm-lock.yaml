@@ -29,8 +29,8 @@ devDependencies:
     specifier: ^1.4.0
     version: 1.4.0
   '@tsconfig/node18':
-    specifier: ^18.2.0
-    version: 18.2.0
+    specifier: ^18.2.2
+    version: 18.2.2
   '@types/hammerjs':
     specifier: ^2.0.42
     version: 2.0.42
@@ -783,8 +783,8 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
-  /@tsconfig/node18@18.2.0:
-    resolution: {integrity: sha512-yhxwIlFVSVcMym3O31HoMnRXpoenmpIxcj4Yoes2DUpe+xCJnA7ECQP1Vw889V0jTt/2nzvpLQ/UuMYCd3JPIg==}
+  /@tsconfig/node18@18.2.2:
+    resolution: {integrity: sha512-d6McJeGsuoRlwWZmVIeE8CUA27lu6jLjvv1JzqmpsytOYYbVi1tHZEnwCNVOXnj4pyLvneZlFlpXUK+X9wBWyw==}
     dev: true
 
   /@types/argparse@1.0.38:
