@@ -110,8 +110,8 @@ devDependencies:
     specifier: ^0.33.0
     version: 0.33.0(happy-dom@12.9.1)(jsdom@22.1.0)(sass@1.69.0)
   vue-eslint-parser:
-    specifier: ^9.3.1
-    version: 9.3.1(eslint@8.51.0)
+    specifier: ^9.3.2
+    version: 9.3.2(eslint@8.51.0)
   vue-tsc:
     specifier: ^1.8.19
     version: 1.8.19(typescript@5.2.2)
@@ -1242,7 +1242,7 @@ packages:
       eslint-plugin-react: 7.32.2(eslint@8.51.0)
       eslint-plugin-vue: 9.17.0(eslint@8.51.0)
       eslint-plugin-vuejs-accessibility: 1.2.0(eslint@8.51.0)
-      vue-eslint-parser: 9.3.1(eslint@8.51.0)
+      vue-eslint-parser: 9.3.2(eslint@8.51.0)
     transitivePeerDependencies:
       - '@typescript-eslint/parser'
       - eslint-import-resolver-typescript
@@ -1280,7 +1280,7 @@ packages:
       eslint: 8.51.0
       eslint-plugin-vue: 9.17.0(eslint@8.51.0)
       typescript: 5.2.2
-      vue-eslint-parser: 9.3.1(eslint@8.51.0)
+      vue-eslint-parser: 9.3.2(eslint@8.51.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2488,7 +2488,7 @@ packages:
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.13
       semver: 7.5.4
-      vue-eslint-parser: 9.3.1(eslint@8.51.0)
+      vue-eslint-parser: 9.3.2(eslint@8.51.0)
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -2502,7 +2502,7 @@ packages:
       aria-query: 5.3.0
       emoji-regex: 10.2.1
       eslint: 8.51.0
-      vue-eslint-parser: 9.3.1(eslint@8.51.0)
+      vue-eslint-parser: 9.3.2(eslint@8.51.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2515,25 +2515,12 @@ packages:
       estraverse: 4.3.0
     dev: true
 
-  /eslint-scope@7.2.0:
-    resolution: {integrity: sha512-DYj5deGlHBfMt15J7rdtyKNq/Nqlv5KfU4iodrQ019XESsRnwXH9KAE0y3cwtUHDo2ob7CypAnCqefh6vioWRw==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dependencies:
-      esrecurse: 4.3.0
-      estraverse: 5.3.0
-    dev: true
-
   /eslint-scope@7.2.2:
     resolution: {integrity: sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dependencies:
       esrecurse: 4.3.0
       estraverse: 5.3.0
-    dev: true
-
-  /eslint-visitor-keys@3.4.1:
-    resolution: {integrity: sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
   /eslint-visitor-keys@3.4.3:
@@ -2585,15 +2572,6 @@ packages:
       text-table: 0.2.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /espree@9.5.2:
-    resolution: {integrity: sha512-7OASN1Wma5fum5SrNhFMAMJxOUAbhyfQ8dQ//PJaJbNw0URTPWqIghHWt1MmAANKhHZIYOHruW4Kw4ruUWOdGw==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    dependencies:
-      acorn: 8.9.0
-      acorn-jsx: 5.3.2(acorn@8.9.0)
-      eslint-visitor-keys: 3.4.3
     dev: true
 
   /espree@9.6.1:
@@ -5120,20 +5098,20 @@ packages:
       vue: 3.3.4
     dev: false
 
-  /vue-eslint-parser@9.3.1(eslint@8.51.0):
-    resolution: {integrity: sha512-Clr85iD2XFZ3lJ52/ppmUDG/spxQu6+MAeHXjjyI4I1NUYZ9xmenQp4N0oaHJhrA8OOxltCVxMRfANGa70vU0g==}
+  /vue-eslint-parser@9.3.2(eslint@8.51.0):
+    resolution: {integrity: sha512-q7tWyCVaV9f8iQyIA5Mkj/S6AoJ9KBN8IeUSf3XEmBrOtxOZnfTg5s4KClbZBCK3GtnT/+RyCLZyDHuZwTuBjg==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
       debug: 4.3.4
       eslint: 8.51.0
-      eslint-scope: 7.2.0
-      eslint-visitor-keys: 3.4.1
-      espree: 9.5.2
+      eslint-scope: 7.2.2
+      eslint-visitor-keys: 3.4.3
+      espree: 9.6.1
       esquery: 1.5.0
       lodash: 4.17.21
-      semver: 7.5.3
+      semver: 7.5.4
     transitivePeerDependencies:
       - supports-color
     dev: true
