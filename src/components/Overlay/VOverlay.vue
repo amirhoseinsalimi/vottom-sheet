@@ -18,6 +18,7 @@ const backgroundColorWithOpacity = computed(() => ({
 
 <style lang="scss" scoped>
 .overlay {
+  box-sizing: border-box;
   position: fixed;
   bottom: 0;
   left: 0;
