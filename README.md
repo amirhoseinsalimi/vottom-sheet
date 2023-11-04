@@ -80,6 +80,7 @@ Vottom Sheet supports the following props (More props are going to be added):
 | `eager`               | `Boolean`            | ❌        | `false`       | Force the component's content to render when it mounts. This is useful if you have content that will not be rendered in the DOM that you want crawled for SEO. |
 | `closeOnOverlayClick` | `Boolean`            | ❌        | `false`       | Whether to close the bottom sheet if the overlay is clicked.                                                                                                   |
 | `disableSwipe`        | `Boolean`            | ❌        | `false`       | Disable the swipe-to-close functionality.                                                                                                                      |
+| `transitionDuration`  | `Boolean`            | ❌        | `300`         | Specify the transition duration of toggling the bottom sheet.                                                                                                  |
 
 ## Events
 
