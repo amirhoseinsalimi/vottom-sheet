@@ -234,6 +234,7 @@ function closeIfShouldClose() {
 
 <style scoped lang="scss">
 .bottom-sheet {
+  box-sizing: border-box;
   transition: {
     property: all;
     timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
