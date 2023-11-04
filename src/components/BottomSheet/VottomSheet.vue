@@ -3,8 +3,8 @@ import Hammer from 'hammerjs';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useVModel, useWindowSize } from '@vueuse/core';
 import BaseOverlay from '@/components/Overlay/VOverlay.vue';
-import { useLockDocumentOverflow, useOnEscapeKey } from '@/composables/index.ts';
-import { MAX_OPACITY } from './VottomSheet.constants.ts';
+import { useLockDocumentOverflow, useOnEscapeKey } from '@/composables';
+import { DEFAULT_TRANSITION_DURATION, DEFAULT_Z_INDEX, MAX_OPACITY } from './VottomSheet.constants';
 import type { Emits, Props } from './VottomSheet.types';
 
 const props = withDefaults(defineProps<Props>(), {
@@ -13,7 +13,8 @@ const props = withDefaults(defineProps<Props>(), {
   disableSwipe: false,
   eager: false,
   fullscreen: false,
-  zIndex: 0,
+  zIndex: DEFAULT_Z_INDEX,
+  transitionDuration: DEFAULT_TRANSITION_DURATION,
 });
 
 const emit = defineEmits<Emits>();
@@ -134,6 +135,7 @@ const openStateStyle = computed(() => ({
   bottom: `${bottom.value}px`,
   height: `${Math.abs(height.value)}px`,
   width: width.value,
+  transitionDuration: `${props.transitionDuration}ms`,
 }));
 
 watch(internalModelValue, setBottom);
@@ -232,7 +234,10 @@ function closeIfShouldClose() {
 
 <style scoped lang="scss">
 .bottom-sheet {
-  transition: all 300ms cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: {
+    property: all;
+    timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
   will-change: transform;
   position: fixed;
   display: flex;

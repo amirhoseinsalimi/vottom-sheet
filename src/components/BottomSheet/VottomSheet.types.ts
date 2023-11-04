@@ -6,6 +6,7 @@ export interface Props {
   eager?: boolean;
   fullscreen?: boolean;
   zIndex?: StringOrNumber;
+  transitionDuration?: StringOrNumber;
 }
 
 export interface Emits {
