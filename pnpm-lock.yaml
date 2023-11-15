@@ -32,8 +32,8 @@ devDependencies:
     specifier: ^18.2.2
     version: 18.2.2
   '@types/hammerjs':
-    specifier: ^2.0.42
-    version: 2.0.42
+    specifier: ^2.0.44
+    version: 2.0.44
   '@types/jsdom':
     specifier: ^21.1.5
     version: 21.1.5
@@ -774,8 +774,8 @@ packages:
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
     dev: true
 
-  /@types/hammerjs@2.0.42:
-    resolution: {integrity: sha512-Xxk14BrwHnGi0xlURPRb+Y0UNn2w3cTkeFm7pKMsYOaNgH/kabbJLhcBoNIodwsbTz7Z8KcWjtDvlGH0nc0U9w==}
+  /@types/hammerjs@2.0.44:
+    resolution: {integrity: sha512-pdGBkAh4ggfXAkiwgmTdROJe3mwvLWJYm6JiaAwCtskAU0Weh+JQyyMTbhvxjxD2n8sr8PrxVwyDzmpnK4pUrQ==}
     dev: true
 
   /@types/jsdom@21.1.5:
