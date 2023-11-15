@@ -34,7 +34,7 @@
     "@vueuse/core": "^10.5.0",
     "hammerjs": "^2.0.8",
     "happy-dom": "12.9.1",
-    "vue": "^3.3.4"
+    "vue": "^3.3.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.1",
