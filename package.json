@@ -31,7 +31,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@vueuse/core": "^10.5.0",
+    "@vueuse/core": "^10.6.1",
     "hammerjs": "^2.0.8",
     "happy-dom": "12.9.1",
     "vue": "^3.3.8"
