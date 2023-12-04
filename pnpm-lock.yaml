@@ -50,8 +50,8 @@ devDependencies:
     specifier: ^4.4.0
     version: 4.4.0(vite@4.5.0)(vue@3.3.8)
   '@vue/eslint-config-airbnb':
-    specifier: ^7.0.0
-    version: 7.0.0(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.18.1)(eslint@8.51.0)
+    specifier: ^7.0.1
+    version: 7.0.1(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.18.1)(eslint@8.51.0)
   '@vue/eslint-config-prettier':
     specifier: ^8.0.0
     version: 8.0.0(eslint@8.51.0)(prettier@3.0.3)
@@ -1216,8 +1216,8 @@ packages:
       '@vue/compiler-dom': 3.3.8
       '@vue/shared': 3.3.8
 
-  /@vue/eslint-config-airbnb@7.0.0(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.18.1)(eslint@8.51.0):
-    resolution: {integrity: sha512-qC3HRnvaDWRocDKPVKUnjWLXo1NDfDSPKwizc49llN/mRZF2Q9D/7wcAMwzCVzPM/D80ZUz0sy1cq9u/6jFnqw==}
+  /@vue/eslint-config-airbnb@7.0.1(@typescript-eslint/parser@5.62.0)(eslint-plugin-vue@9.18.1)(eslint@8.51.0):
+    resolution: {integrity: sha512-8d5QJeaL3PxKXfCVNGSA7RSKk+GNQLkOAMgN33ST+wJaXSdUI/4dJ0+LfqoLOu92NqwmKiIEZWMyPiGywhS1BA==}
     peerDependencies:
       eslint: ^8.2.0
       eslint-plugin-vue: ^9.2.0
