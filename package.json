@@ -64,7 +64,7 @@
     "prettier": "^3.2.5",
     "sass": "^1.70.0",
     "typescript": "~5.3.3",
-    "vite": "^4.5.3",
+    "vite": "^5.3.5",
     "vite-plugin-dts": "^3.7.2",
     "vitest": "^0.34.6",
     "vue-eslint-parser": "^9.3.2",
