@@ -15,8 +15,8 @@ importers:
         specifier: ^2.0.8
         version: 2.0.8
       happy-dom:
-        specifier: 15.10.2
-        version: 15.10.2
+        specifier: 17.4.4
+        version: 17.4.4
       vue:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.3.3)
@@ -110,7 +110,7 @@ importers:
         version: 3.7.2(@types/node@22.13.10)(rollup@4.22.4)(typescript@5.3.3)(vite@5.4.8(@types/node@22.13.10)(sass@1.70.0))
       vitest:
         specifier: ^3.0.8
-        version: 3.0.8(@types/node@22.13.10)(happy-dom@15.10.2)(jsdom@23.0.1)(sass@1.70.0)
+        version: 3.0.8(@types/node@22.13.10)(happy-dom@17.4.4)(jsdom@23.0.1)(sass@1.70.0)
       vue-eslint-parser:
         specifier: ^9.3.2
         version: 9.3.2(eslint@8.51.0)
@@ -1630,8 +1630,8 @@ packages:
     resolution: {integrity: sha512-tSQXBXS/MWQOn/RKckawJ61vvsDpCom87JgxiYdGwHdOa0ht0vzUWDlfioofFCRU0L+6NGDt6XzbgoJvZkMeRQ==}
     engines: {node: '>=0.8.0'}
 
-  happy-dom@15.10.2:
-    resolution: {integrity: sha512-NbA5XrSovenJIIcfixCREX3ZnV7yHP4phhbfuxxf4CPn+LZpz/jIM9EqJ2DrPwgVDSMoAKH3pZwQvkbsSiCrUw==}
+  happy-dom@17.4.4:
+    resolution: {integrity: sha512-/Pb0ctk3HTZ5xEL3BZ0hK1AqDSAUuRQitOmROPHhfUYEWpmTImwfD8vFDGADmMAX0JYgbcgxWoLFKtsWhcpuVA==}
     engines: {node: '>=18.0.0'}
 
   hard-rejection@2.1.0:
@@ -4816,9 +4816,8 @@ snapshots:
 
   hammerjs@2.0.8: {}
 
-  happy-dom@15.10.2:
+  happy-dom@17.4.4:
     dependencies:
-      entities: 4.5.0
       webidl-conversions: 7.0.0
       whatwg-mimetype: 3.0.0
 
@@ -5996,7 +5995,7 @@ snapshots:
       fsevents: 2.3.3
       sass: 1.70.0
 
-  vitest@3.0.8(@types/node@22.13.10)(happy-dom@15.10.2)(jsdom@23.0.1)(sass@1.70.0):
+  vitest@3.0.8(@types/node@22.13.10)(happy-dom@17.4.4)(jsdom@23.0.1)(sass@1.70.0):
     dependencies:
       '@vitest/expect': 3.0.8
       '@vitest/mocker': 3.0.8(vite@5.4.8(@types/node@22.13.10)(sass@1.70.0))
@@ -6020,7 +6019,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.13.10
-      happy-dom: 15.10.2
+      happy-dom: 17.4.4
       jsdom: 23.0.1
     transitivePeerDependencies:
       - less
