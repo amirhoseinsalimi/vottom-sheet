@@ -19,6 +19,10 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emit = defineEmits<Emits>();
 
+defineOptions({
+  inheritAttrs: false,
+});
+
 const internalModelValue = useVModel(props, 'modelValue', emit);
 
 // HEIGHT
